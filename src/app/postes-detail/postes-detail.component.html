@@ -1,0 +1,15 @@
+<div *ngIf="feedPost">
+    <h2>{{feedPost.post | uppercase}}</h2>
+
+    <div *ngIf="comentarios">
+        <div><span>Coementarios: </span><input [(ngModel)]="textoPost" placeholder="Novo Comentario">
+          <button pButton type="button" label="Primary" (click)="createComentario()" class="ui-button-rounded">Comentar</button>
+        </div>
+        <ul class="postes">
+          <li *ngFor="let comentario of comentarios">
+              <span class="badge">{{comentario.id}}</span> {{comentario.comentarios}}            
+          </li>
+        </ul>        
+    </div>    
+</div>
+<button pButton type="button" label="Primary" (click)="goBack()" class="ui-button-rounded">go back</button>

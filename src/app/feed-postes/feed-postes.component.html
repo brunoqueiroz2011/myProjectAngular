@@ -1,0 +1,13 @@
+<h2>Meus Postes</h2>
+<div><span>Novo Poste: </span><input [(ngModel)]="textoPost" placeholder="Novo Poste">
+  <button (click)="createPost()">Postar</button>
+</div>
+  
+<ul class="postes">
+  <li *ngFor="let feed of feeds">          
+      <button (click)="deletePost(feed.id)">Delete</button>          
+      <a routerLink="/detail/{{feed.id}}">
+        <span class="badge">{{feed.id}}</span> {{feed.post}}
+      </a>                
+  </li>
+</ul>
